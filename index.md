@@ -17,9 +17,9 @@ The entire thing is proven using [Halo 2 SNARK's](https://github.com/cryptape/ck
 
 ## Get ready 
 
-we need devs and people willing to run the brainfuck nodes
+we're going to violate securities law in this channel:
 
-https://t.me/+t_OqbV1y2Nw1YjFl
+[https://t.me/+t_OqbV1y2Nw1YjFl](https://t.me/+t_OqbV1y2Nw1YjFl)
 
 ## Status
 
