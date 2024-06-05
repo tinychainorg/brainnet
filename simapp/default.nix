@@ -7,7 +7,7 @@
 }:
 
 let
-  pname = "simd";
+  pname = "brainnetd";
   version = "v0.0.1";
   tags = [ "ledger" "netgo" "rocksdb" "grocksdb_no_link" ];
   ldflags = lib.concatStringsSep "\n" ([
@@ -23,7 +23,7 @@ buildGoApplication rec {
   src = ./.;
   pwd = src;
   modules = ./gomod2nix.toml;
-  subPackages = [ "simd" ];
+  subPackages = [ "brainnetd" ];
   doCheck = false;
   buildInputs = [ rocksdb ];
   CGO_ENABLED = "1";

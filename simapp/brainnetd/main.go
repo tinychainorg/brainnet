@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"cosmossdk.io/simapp"
-	"cosmossdk.io/simapp/simd/cmd"
+	"cosmossdk.io/simapp/brainnetd/cmd"
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 )

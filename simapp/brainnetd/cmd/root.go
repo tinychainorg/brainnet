@@ -26,7 +26,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 )
 
-// NewRootCmd creates a new root command for simd. It is called once in the
+// NewRootCmd creates a new root command for brainnetd. It is called once in the
 // main function.
 func NewRootCmd() *cobra.Command {
 	// we "pre"-instantiate the application for getting the injected/configured encoding configuration
@@ -55,8 +55,8 @@ func NewRootCmd() *cobra.Command {
 		WithValidatorPrefix(sdk.GetConfig().GetBech32ValidatorAddrPrefix())
 
 	rootCmd := &cobra.Command{
-		Use:           "simd",
-		Short:         "simulation app",
+		Use:           "brainnetd",
+		Short:         "brainfuck mainnet (brainnet)",
 		SilenceErrors: true,
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs

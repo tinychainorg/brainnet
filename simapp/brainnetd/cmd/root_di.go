@@ -28,9 +28,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
 	"github.com/cosmos/cosmos-sdk/types/module"
+	"fmt"
+	// "os"
 )
 
-// NewRootCmd creates a new root command for simd. It is called once in the main function.
+// NewRootCmd creates a new root command for brainnetd. It is called once in the main function.
 func NewRootCmd() *cobra.Command {
 	var (
 		autoCliOpts   autocli.AppOptions
@@ -57,8 +59,8 @@ func NewRootCmd() *cobra.Command {
 	}
 
 	rootCmd := &cobra.Command{
-		Use:           "simd",
-		Short:         "simulation app",
+		Use:           "brainnetd",
+		Short:         ``,
 		SilenceErrors: true,
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs
@@ -83,10 +85,43 @@ func NewRootCmd() *cobra.Command {
 
 			customAppTemplate, customAppConfig := initAppConfig()
 			customCMTConfig := initCometBFTConfig()
-
+			
 			return server.InterceptConfigsPreRunHandler(cmd, customAppTemplate, customAppConfig, customCMTConfig)
 		},
 	}
+
+// 	fmt.Fprintf(os.Stdout, `
+// \033[1;31m; B ;\033[0m
+// \033[1;32m+[--->++<]>+.---.+++++++..+++.>+.-----.>+.\033[0m          
+
+// \033[1;34m
+//  _  | |__  _ __ __ _(_)_ __  / _|_   _  ___| | __  _            + 
+// (_) | '_ \| '__/ _' | | '_ \| |_| | | |/ __| |/ / (_)          + 
+//  _  | |_) | | | (_| | | | | |  _| |_| | (__|   <   _          + 
+// ( ) |_.__/|_|  \__,_|_|_| |_|_|  \__,_|\___|_|\_\ ( )        . 
+//                                                 _|/              
+// \033[0m
+
+// \033[1;31m; R ;\033[0m
+// \033[1;35m+++[->+++++<]>+.----.+++..+++.>-.++++++++++.\033[0m
+
+// Brainfuck Mainnet (Brainnet)
+// `)
+
+	fmt.Fprintf(os.Stdout, "\033[1;31m\033[0m\n")
+	// fmt.Fprintf(os.Stdout, "\033[1;32m+[--->++<]>+.---.+++++++..+++.>+.-----.>+.\033[0m\033[1;35m+++[->+++++<]>+.----.+++..+++.>-.++++++++++.\033[0m\n")
+	fmt.Fprintf(os.Stdout, "\033[1;34m")
+	fmt.Fprintf(os.Stdout, " _  | |__  _ __ __ _(_)_ __  / _|_   _  ___| | __  _            + \n")
+	fmt.Fprintf(os.Stdout, "(_) | '_ \\| '__/ _' | | '_ \\| |_| | | |/ __| |/ / (_)          + \n")
+	fmt.Fprintf(os.Stdout, " _  | |_) | | | (_| | | | | |  _| |_| | (__|   <   _          + \n")
+	fmt.Fprintf(os.Stdout, "( ) |_.__/|_|  \\__,_|_|_| |_|_|  \\__,_|\\___|_|\\_\\ ( )        . \n")
+	fmt.Fprintf(os.Stdout, "                                        MAINNET _|/              \n")
+	// fmt.Fprintf(os.Stdout, "\033[0m                                                 ")
+	// fmt.Fprintf(os.Stdout, "")
+	fmt.Fprintf(os.Stdout, "\033[1;31m\033[0m\n")
+	fmt.Fprintf(os.Stdout, "Brainfuck Mainnet (Brainnet)\n")
+	fmt.Fprintf(os.Stdout, "\n")
+
 
 	initRootCmd(rootCmd, clientCtx.TxConfig, moduleManager)
 
